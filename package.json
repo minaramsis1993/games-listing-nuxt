@@ -1,0 +1,19 @@
+{
+  "name": "nuxt-games-listing-task",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "core-js": "^3.8.3",
+    "nuxt": "^2.14.12",
+    "qs": "^6.9.6",
+    "vue-spinner": "^1.0.4"
+  },
+  "devDependencies": {}
+}
