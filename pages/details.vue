@@ -53,6 +53,18 @@ export default {
     if (!this.getSelectedGame) {
       this.$router.push("/");
     }
+  },
+  head() {
+    return {
+      title: "Some title for single game",
+      meta: [
+        {
+          hid: `description`,
+          name: "description",
+          content: `Some description for Single Game Page`
+        }
+      ]
+    };
   }
 };
 </script>

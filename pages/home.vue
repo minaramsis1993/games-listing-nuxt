@@ -35,6 +35,19 @@ import FeaturedGame from "../components/FeaturedGame";
 import GamesCard from "../components/GamesCard";
 
 export default {
+  head() {
+    return {
+      title: "Games Platform",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Some description for Games Page"
+        }
+      ]
+    };
+  },
+
   components: {
     PulseLoader,
     GenresSlider,
