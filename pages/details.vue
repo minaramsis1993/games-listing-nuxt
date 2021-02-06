@@ -33,21 +33,21 @@ import MoreDetailsCard from "../components/MoreDetailsCard";
 export default {
   components: {
     GamesCard,
-    MoreDetailsCard
+    MoreDetailsCard,
   },
   computed: {
     ...mapGetters({
       getSelectedGame: "games/getSelectedGame",
-      getRecommendedGames: "games/getRecommendedGames"
-    })
+      getRecommendedGames: "games/getRecommendedGames",
+    }),
   },
   methods: {
     ...mapActions({
-      selectGame: "games/selectGame"
+      selectGame: "games/selectGame",
     }),
     gameSelectedHandler(game) {
       this.selectGame(game);
-    }
+    },
   },
   created() {
     if (!this.getSelectedGame) {
@@ -55,17 +55,18 @@ export default {
     }
   },
   head() {
+    const name = this.getSelectedGame?.name;
     return {
-      title: "Some title for single game",
+      title: name,
       meta: [
         {
           hid: `description`,
           name: "description",
-          content: `Some description for Single Game Page`
-        }
-      ]
+          content: `Some description for single game`,
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 

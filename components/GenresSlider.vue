@@ -4,7 +4,7 @@
       <div
         :class="{
           item: true,
-          active: getSelectedGenre && getSelectedGenre.id === genre.id
+          active: getSelectedGenre && getSelectedGenre.id === genre.id,
         }"
         v-for="genre in getGenres"
         :key="genre.id"
@@ -23,24 +23,24 @@ export default {
   computed: {
     ...mapGetters({
       getGenres: "games/getGenres",
-      getSelectedGenre: "games/getSelectedGenre"
-    })
+      getSelectedGenre: "games/getSelectedGenre",
+    }),
   },
   methods: {
     ...mapActions({
       fetchGenres: "games/fetchGenres",
       fetchGames: "games/fetchGames",
-      selectGenre: "games/selectGenre"
+      selectGenre: "games/selectGenre",
     }),
     genreClickHandler(genre) {
       // WILL selectGenre && fetchGames from the store
       this.selectGenre(genre);
       this.fetchGames();
-    }
+    },
   },
   created() {
     this.fetchGenres();
-  }
+  },
 };
 </script>
 
@@ -62,7 +62,7 @@ export default {
   margin: 1rem 0.5rem;
   display: inline-block;
   cursor: pointer;
-  font-weight: 400;
+  font-weight: bold;
   color: #545454;
 }
 .wrapper .active {
